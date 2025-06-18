@@ -3,6 +3,12 @@ os: linux
 files:
   - source: .
     destination: /home/ec2-user/app
+permissions:
+  - object: /scripts/
+    mode: 644
+    owner: ec2-user
+    type:
+      - directory
 hooks:
   AfterInstall:
     - location: scripts/install.sh
